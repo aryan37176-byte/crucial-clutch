@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Sword, Shield, Flame, Award, Sparkles, Check, User, Quote, BookOpen } from "lucide-react";
 
+import spartanImg from "../assets/images/spartan_cliff_sunset_1782274848517.jpg";
+import arjunaImg from "../assets/images/indian_archer_mahabharat_1782274871068.jpg";
+import yogiImg from "../assets/images/meditating_yogi_armor_1782274886427.jpg";
+import vikingImg from "../assets/images/viking_snow_storm_1782274899206.jpg";
+import centurionImg from "../assets/images/centurion_stone_gate_1782274915989.jpg";
+
 export interface Warrior {
   id: string;
   name: string;
@@ -22,7 +28,7 @@ export const WARRIORS_DATA: Warrior[] = [
     id: "spartan_cliff",
     name: "Leonidas of the Sunset",
     type: "Spartan Commander",
-    image: "/src/assets/images/spartan_cliff_sunset_1782274848517.jpg",
+    image: spartanImg,
     quote: "He who conquers himself is the mightiest warrior.",
     bio: "Standing on the sheer edge of the Spartan cliffs, Leonidas peers into the fiery sunset, resolving to never let down his shield of commitments.",
     stats: { willpower: 98, discipline: 95, honor: 99, focus: 90 }
@@ -31,7 +37,7 @@ export const WARRIORS_DATA: Warrior[] = [
     id: "arjuna_archer",
     name: "Arjuna of Kurukshetra",
     type: "Mahabharat Archer",
-    image: "/src/assets/images/indian_archer_mahabharat_1782274871068.jpg",
+    image: arjunaImg,
     quote: "Focus on the eye of the bird; let everything else fade into dust.",
     bio: "In the center of the world's greatest battle, Arjuna stands upon his dynamic golden chariot, raising his divine bow Gandiva. He strikes down laziness and doubt with thunderous commitments.",
     stats: { willpower: 99, discipline: 98, honor: 97, focus: 100 }
@@ -40,7 +46,7 @@ export const WARRIORS_DATA: Warrior[] = [
     id: "meditating_yogi",
     name: "Sage of the Sacred Peak",
     type: "Yogi Ascetic",
-    image: "/src/assets/images/meditating_yogi_armor_1782274886427.jpg",
+    image: yogiImg,
     quote: "The soul's absolute weapon is perfect stillness.",
     bio: "He sits in serene meditation on the highest mountain peak. Beside him lies empty gold armor, indicating that true victory is won on the inner battlefield of self-restraint.",
     stats: { willpower: 100, discipline: 99, honor: 95, focus: 98 }
@@ -49,7 +55,7 @@ export const WARRIORS_DATA: Warrior[] = [
     id: "viking_peaks",
     name: "Ragnar of the Frost",
     type: "Norse Warlord",
-    image: "/src/assets/images/viking_snow_storm_1782274899206.jpg",
+    image: vikingImg,
     quote: "Fear is a temporary shadow. Discipline is an eternal shield.",
     bio: "Charging through the heavy snowstorms of the northern valleys, Ragnar wields his heavy battle-axe, greeting tempestuous deadlines as training grounds.",
     stats: { willpower: 96, discipline: 94, honor: 96, focus: 92 }
@@ -58,7 +64,7 @@ export const WARRIORS_DATA: Warrior[] = [
     id: "centurion_gate",
     name: "Decimus the Guard",
     type: "Roman Centurion",
-    image: "/src/assets/images/centurion_stone_gate_1782274915989.jpg",
+    image: centurionImg,
     quote: "Let your shield be your duty, and your sword your unwavering focus.",
     bio: "Decimus stands sentinel at the massive ancient stone gateway under a glowing crescent moon, maintaining strict watch over the flow of hours.",
     stats: { willpower: 95, discipline: 100, honor: 98, focus: 96 }

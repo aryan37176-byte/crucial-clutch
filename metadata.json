@@ -1,0 +1,8 @@
+{
+  "name": "Crucial Clutch",
+  "description": "An AI-powered tactical productivity companion inspired by Roman and Indian warrior lore, enforcing discipline and strict commitments.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

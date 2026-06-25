@@ -11,9 +11,9 @@ app.use(express.json());
 
 const PORT = 3000;
 
-// Lazy initialize Gemini
+// Lazy initialize AI
 let genAIInstance: any = null;
-function getGeminiAI() {
+function getAIClient() {
   if (!genAIInstance) {
     const apiKey = process.env.GEMINI_API_KEY;
     if (apiKey && apiKey !== "MY_GEMINI_API_KEY" && apiKey.trim() !== "") {
@@ -88,14 +88,14 @@ app.get("/api/health", (req, res) => {
 // API 2: Organize Life Factors
 app.post("/api/ai/organize-factors", async (req, res) => {
   const { preferences, list } = req.body;
-  const aiClient = getGeminiAI();
+  const aiClient = getAIClient();
   
   if (!aiClient) {
     // Return structured default ordered factor list
     const defaults = [...list];
     return res.json({
       orderedList: defaults,
-      reasoning: "Generals order their battlefront based on tradition. (Gemini offline fallback: standard configuration applied)."
+      reasoning: "Generals order their battlefront based on tradition. (AI offline fallback: standard configuration applied)."
     });
   }
 
@@ -126,7 +126,7 @@ Strictly return only valid JSON matching this schema:
     const parsed = JSON.parse(response.text.trim());
     return res.json(parsed);
   } catch (error) {
-    console.log("Gemini Factor Organization Error (using fallback). Spikes in demand are usually temporary.");
+    console.log("AI Factor Organization Error (using fallback). Spikes in demand are usually temporary.");
     return res.json({
       orderedList: list,
       reasoning: "The fog of war obscures the sky. Your custom arrangement remains steadfast as selected."
@@ -137,7 +137,7 @@ Strictly return only valid JSON matching this schema:
 // API 3: Get Motivational Quote
 app.post("/api/ai/get-quote", async (req, res) => {
   const { mood, taskTitle } = req.body;
-  const aiClient = getGeminiAI();
+  const aiClient = getAIClient();
 
   if (!aiClient) {
     const randomQuote = FALLBACK_QUOTES[Math.floor(Math.random() * FALLBACK_QUOTES.length)];
@@ -189,7 +189,7 @@ app.post("/api/ai/verify-excuse", async (req, res) => {
     });
   }
 
-  const aiClient = getGeminiAI();
+  const aiClient = getAIClient();
   if (!aiClient) {
     return res.json(judgeExcuseOffline(excuse));
   }
@@ -228,7 +228,7 @@ Respond ONLY with a JSON object in this schema:
     const parsed = JSON.parse(response.text.trim());
     return res.json(parsed);
   } catch (error) {
-    console.log("Gemini Verify Excuse Error (using offline judge fallback). Spikes in demand are usually temporary.");
+    console.log("AI Verify Excuse Error (using offline judge fallback). Spikes in demand are usually temporary.");
     return res.json(judgeExcuseOffline(excuse));
   }
 });

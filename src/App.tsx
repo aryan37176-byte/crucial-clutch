@@ -514,7 +514,7 @@ export default function App() {
     setSession(updated);
   };
 
-  // --- AI Factor Sorting Form ---
+  // --- Tactical Factor Sorting Form ---
   const [aiSortingText, setAiSortingText] = useState("");
   const [isOrganizing, setIsOrganizing] = useState(false);
   const [aiReasoning, setAiReasoning] = useState("");
@@ -541,7 +541,7 @@ export default function App() {
       }
     } catch (e) {
       console.error(e);
-      setAiReasoning("Gemini offline. Default robust Roman tactical hierarchy engaged (Study & Health given highest glory).");
+      setAiReasoning("Tactical Engine offline. Default robust Roman tactical hierarchy engaged (Study & Health given highest glory).");
     } finally {
       setIsOrganizing(false);
     }
@@ -1319,10 +1319,10 @@ export default function App() {
           <main className="space-y-6">
             <div className="bg-zinc-900/60 p-5 rounded-xl border border-zinc-850">
               <label className="block text-xs font-mono uppercase tracking-widest text-amber-400 mb-2">
-                ⚔️ Forge Custom Rankings with AI (Optional)
+                ⚔️ Forge Custom Rankings with Tactician (Optional)
               </label>
               <p className="text-xs text-zinc-400 mb-3">
-                Let Gemini determine an optimal battlefield arrangement based on your current personal burden or focus:
+                Let the Tactical Engine determine an optimal battlefield arrangement based on your current personal burden or focus:
               </p>
               <textarea
                 value={aiSortingText}
@@ -1336,7 +1336,7 @@ export default function App() {
                 className="mt-3 bg-amber-500 hover:bg-amber-600 disabled:bg-zinc-800 disabled:text-zinc-500 text-black font-mono text-xs font-semibold py-2 px-4 rounded-lg flex items-center gap-2 transition-all cursor-pointer"
               >
                 <RefreshCw className={`w-3.5 h-3.5 ${isOrganizing ? 'animate-spin' : ''}`} />
-                {isOrganizing ? "AI Consulting Codex..." : "Forage Order via AI"}
+                {isOrganizing ? "Consulting Tactical Codex..." : "Forage Order via Tactician"}
               </button>
 
               {aiReasoning && (
@@ -1436,7 +1436,7 @@ export default function App() {
             <CrucialLogo size="sm" className="shrink-0" />
             <div className="hidden sm:block">
               <p className="text-[9px] font-mono text-zinc-500 uppercase tracking-widest leading-none">
-                AI Discipline Engine
+                Automated Discipline Engine
               </p>
               <h2 className="text-zinc-300 font-serif text-sm font-semibold tracking-wider">
                 Crucial Clutch Portal
@@ -2306,7 +2306,7 @@ export default function App() {
               </div>
             </div>
 
-            {/* AI Generated Motivation quote display */}
+            {/* Automated Motivation quote display */}
             <div className="bg-zinc-900/40 p-4 rounded-xl border border-zinc-850 text-xs text-zinc-300 italic text-center mb-4 relative">
               <span className="font-serif block font-bold text-amber-550 uppercase text-[9px] tracking-widest mb-1.5 font-sans italic">
                 {activePopupQuote.author || "Marcus Aurelius"} Commandment:
@@ -2505,7 +2505,7 @@ export default function App() {
                         className="bg-amber-500 text-zinc-950 text-xs font-mono font-bold py-1.5 px-4 rounded-lg flex items-center gap-1.5 cursor-pointer disabled:bg-zinc-800 disabled:text-zinc-500"
                       >
                         <RefreshCw className={`w-3 h-3 ${isVerifyingExcuse ? 'animate-spin' : ''}`} />
-                        Verify excuse with AI Commander
+                        Verify excuse with Commander Tribunal
                       </button>
                     </div>
                   </div>
